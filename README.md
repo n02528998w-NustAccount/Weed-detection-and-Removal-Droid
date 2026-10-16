@@ -65,6 +65,7 @@ ros2 run rqt_image_view rqt_image_view /weeds/annotated
 
 Photos and CSV reports are saved under:
 
+
 ```bash
 ~/droid_photos/
 ```
