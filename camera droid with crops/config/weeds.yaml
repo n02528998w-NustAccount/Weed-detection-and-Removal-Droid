@@ -1,0 +1,14 @@
+# Simulator bookkeeping ONLY. Weeds are *found* from the ground-camera image.
+# This list just lets the patrol node tell Gazebo which weed model to delete
+# once the blade has been over it (the simulated equivalent of the cut).
+- {name: weed_1, x: -2.5, y: -3.1}
+- {name: weed_2, x: -0.5, y: -2.9}
+- {name: weed_3, x: 1.5, y: -3.05}
+- {name: weed_4, x: -3.0, y: -0.95}
+- {name: weed_5, x: 0.5, y: -1.1}
+- {name: weed_6, x: 2.2, y: -0.9}
+- {name: weed_7, x: -1.5, y: 1.1}
+- {name: weed_8, x: 1.2, y: 0.9}
+- {name: weed_9, x: 3.5, y: 1.05}
+- {name: weed_10, x: -2.0, y: 2.95}
+- {name: weed_11, x: 2.8, y: 3.0}
