@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<robot name="camera_droid">
+
+  <material name="body"><color rgba="0.10 0.40 0.80 1"/></material>
+  <material name="wheel"><color rgba="0.10 0.10 0.10 1"/></material>
+  <material name="cam"><color rgba="0.90 0.20 0.20 1"/></material>
+
+  <!-- Chassis (base_link sits on the ground, between the drive wheels) -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.10"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.08" iyz="0" izz="0.10"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.10"/>
+      <geometry><box size="0.40 0.28 0.08"/></geometry>
+      <material name="body"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.10"/>
+      <geometry><box size="0.40 0.28 0.08"/></geometry>
+    </collision>
+  </link>
+
+  <!-- Drive wheels -->
+  <link name="left_wheel">
+    <inertial>
+      <mass value="0.4"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0008"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.05" length="0.03"/></geometry>
+      <material name="wheel"/>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.05" length="0.03"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.17 0.05"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="right_wheel">
+    <inertial>
+      <mass value="0.4"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0008"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.05" length="0.03"/></geometry>
+      <material name="wheel"/>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.05" length="0.03"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.17 0.05"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Frictionless casters -->
+  <link name="caster_front">
+    <inertial><mass value="0.1"/><inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/></inertial>
+    <visual><geometry><sphere radius="0.05"/></geometry><material name="wheel"/></visual>
+    <collision><geometry><sphere radius="0.05"/></geometry></collision>
+  </link>
+  <joint name="caster_front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_front"/>
+    <origin xyz="0.15 0 0.05"/>
+  </joint>
+
+  <link name="caster_rear">
+    <inertial><mass value="0.1"/><inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/></inertial>
+    <visual><geometry><sphere radius="0.05"/></geometry><material name="wheel"/></visual>
+    <collision><geometry><sphere radius="0.05"/></geometry></collision>
+  </link>
+  <joint name="caster_rear_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_rear"/>
+    <origin xyz="-0.15 0 0.05"/>
+  </joint>
+
+  <!-- Camera on the front of the chassis (looks along +X) -->
+  <link name="camera_link">
+    <inertial><mass value="0.05"/><inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/></inertial>
+    <visual>
+      <geometry><box size="0.04 0.08 0.04"/></geometry>
+      <material name="cam"/>
+    </visual>
+  </link>
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.19 0 0.20"/>
+  </joint>
+
+
+  <!-- ===== Weed-cutting module ===== -->
+  <material name="metal"><color rgba="0.75 0.75 0.80 1"/></material>
+  <material name="blade"><color rgba="0.85 0.10 0.10 1"/></material>
+
+  <!-- Gantry: two posts on the chassis, a crossbar and a boom that holds the ground camera -->
+  <link name="gantry">
+    <inertial>
+      <origin xyz="0.15 0 0.30"/>
+      <mass value="0.3"/>
+      <inertia ixx="0.002" ixy="0" ixz="0" iyy="0.002" iyz="0" izz="0.002"/>
+    </inertial>
+    <visual name="post_left">
+      <origin xyz="0.15 0.12 0.27"/>
+      <geometry><cylinder radius="0.01" length="0.26"/></geometry>
+      <material name="metal"/>
+    </visual>
+    <visual name="post_right">
+      <origin xyz="0.15 -0.12 0.27"/>
+      <geometry><cylinder radius="0.01" length="0.26"/></geometry>
+      <material name="metal"/>
+    </visual>
+    <visual name="crossbar">
+      <origin xyz="0.15 0 0.40"/>
+      <geometry><box size="0.02 0.26 0.02"/></geometry>
+      <material name="metal"/>
+    </visual>
+    <visual name="boom">
+      <origin xyz="0.235 0 0.40"/>
+      <geometry><box size="0.17 0.02 0.02"/></geometry>
+      <material name="metal"/>
+    </visual>
+  </link>
+  <joint name="gantry_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gantry"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <!-- Downward-facing weed camera. Image "up" = robot forward, image "right" = robot right. -->
+  <link name="ground_camera_link">
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <geometry><box size="0.03 0.06 0.03"/></geometry>
+      <material name="cam"/>
+    </visual>
+  </link>
+  <joint name="ground_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="ground_camera_link"/>
+    <origin xyz="0.30 0 0.38" rpy="0 1.5708 0"/>
+  </joint>
+
+  <!-- Cutter arm reaching out in front of the chassis -->
+  <link name="cutter_arm">
+    <inertial>
+      <origin xyz="0.325 0 0.07"/>
+      <mass value="0.2"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.0005"/>
+    </inertial>
+    <visual name="arm">
+      <origin xyz="0.325 0 0.07"/>
+      <geometry><box size="0.25 0.04 0.02"/></geometry>
+      <material name="metal"/>
+    </visual>
+    <visual name="hub">
+      <origin xyz="0.45 0 0.06"/>
+      <geometry><cylinder radius="0.015" length="0.04"/></geometry>
+      <material name="metal"/>
+    </visual>
+  </link>
+  <joint name="cutter_arm_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="cutter_arm"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <!-- Spinning blade (visual only; weeds are removed by the patrol node when the blade is over them) -->
+  <link name="blade">
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.001"/>
+    </inertial>
+    <visual name="bar_a">
+      <geometry><box size="0.24 0.03 0.006"/></geometry>
+      <material name="blade"/>
+    </visual>
+    <visual name="bar_b">
+      <origin rpy="0 0 1.5708"/>
+      <geometry><box size="0.24 0.03 0.006"/></geometry>
+      <material name="blade"/>
+    </visual>
+  </link>
+  <joint name="blade_spin_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="blade"/>
+    <origin xyz="0.45 0 0.05"/>
+    <axis xyz="0 0 1"/>
+    <dynamics damping="0.01"/>
+  </joint>
+
+  <!-- ===== Gazebo (Harmonic) ===== -->
+  <gazebo reference="caster_front"><mu1>0.0</mu1><mu2>0.0</mu2></gazebo>
+  <gazebo reference="caster_rear"><mu1>0.0</mu1><mu2>0.0</mu2></gazebo>
+  <gazebo reference="left_wheel"><mu1>1.0</mu1><mu2>1.0</mu2></gazebo>
+  <gazebo reference="right_wheel"><mu1>1.0</mu1><mu2>1.0</mu2></gazebo>
+
+  <gazebo reference="camera_link">
+    <sensor name="camera" type="camera">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <topic>/camera/image_raw</topic>
+      <camera>
+        <horizontal_fov>1.047</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip><near>0.05</near><far>20</far></clip>
+      </camera>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.34</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
+      <max_linear_acceleration>1.0</max_linear_acceleration>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <odom_publisher_frequency>30</odom_publisher_frequency>
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>/joint_states</topic>
+    </plugin>
+  </gazebo>
+
+  <!-- Ground (weed) camera -->
+  <gazebo reference="ground_camera_link">
+    <sensor name="ground_camera" type="camera">
+      <always_on>true</always_on>
+      <update_rate>10</update_rate>
+      <topic>/ground_camera/image_raw</topic>
+      <camera>
+        <horizontal_fov>1.5708</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip><near>0.05</near><far>5</far></clip>
+      </camera>
+    </sensor>
+  </gazebo>
+
+  <!-- Blade motor: publish a gz.msgs.Double (rad/s) on /blade/spin -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+      <joint_name>blade_spin_joint</joint_name>
+      <topic>/blade/spin</topic>
+    </plugin>
+  </gazebo>
+
+</robot>

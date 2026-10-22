@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- Merge into your robot URDF/xacro (inside <robot>). Adjust xyz offsets to your chassis.
+     Assumes root link "base_link". Remove any old wheel / DiffDrive / blade blocks first. -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="drive_wheel" params="name y">
+    <link name="${name}_wheel">
+      <inertial><mass value="0.5"/>
+        <inertia ixx="0.00035" iyy="0.000625" izz="0.00035" ixy="0" ixz="0" iyz="0"/></inertial>
+      <visual><origin rpy="-1.5708 0 0"/><geometry><cylinder radius="0.05" length="0.03"/></geometry>
+        <material name="tyre"><color rgba="0.15 0.15 0.15 1"/></material></visual>
+      <visual><geometry><box size="0.09 0.032 0.01"/></geometry>
+        <material name="spoke"><color rgba="0.9 0.9 0.9 1"/></material></visual>
+      <collision><origin rpy="-1.5708 0 0"/><geometry><cylinder radius="0.05" length="0.03"/></geometry></collision>
+    </link>
+    <joint name="${name}_wheel_joint" type="continuous">
+      <parent link="base_link"/><child link="${name}_wheel"/>
+      <origin xyz="0 ${y} 0.05"/><axis xyz="0 1 0"/>
+    </joint>
+    <gazebo reference="${name}_wheel">
+      <mu1>1.0</mu1><mu2>1.0</mu2>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:drive_wheel name="left"  y="0.15"/>
+  <xacro:drive_wheel name="right" y="-0.15"/>
+
+  <link name="blade_link">
+    <inertial><mass value="0.1"/>
+      <inertia ixx="0.0001" iyy="0.0001" izz="0.0002" ixy="0" ixz="0" iyz="0"/></inertial>
+    <visual><geometry><cylinder radius="0.02" length="0.015"/></geometry></visual>
+    <visual><geometry><box size="0.30 0.03 0.004"/></geometry>
+      <material name="blade"><color rgba="0.9 0.1 0.1 1"/></material></visual>
+    <visual><origin rpy="0 0 1.5708"/><geometry><box size="0.30 0.03 0.004"/></geometry>
+      <material name="blade"/></visual>
+  </link>
+  <joint name="blade_joint" type="continuous">
+    <parent link="base_link"/><child link="blade_link"/>
+    <origin xyz="0.25 0 0.03"/><axis xyz="0 0 1"/>
+  </joint>
+
+  <gazebo>
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.30</wheel_separation>
+      <wheel_radius>0.05</wheel_radius>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <max_linear_acceleration>2.0</max_linear_acceleration>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+      <joint_name>blade_joint</joint_name>
+      <topic>/blade/spin</topic>   <!-- Double = target velocity (rad/s) -->
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system"
+            name="gz::sim::systems::JointStatePublisher"/>
+  </gazebo>
+</robot>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="tree_oak">
+    <static>true</static>
+    <link name="link">
+      <visual name="trunk">
+        <geometry><mesh><uri>model://tree_oak/meshes/trunk.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://tree_oak/materials/textures/bark.png</albedo_map>
+            <roughness>0.95</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+      <visual name="canopy">
+        <geometry><mesh><uri>model://tree_oak/meshes/canopy.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://tree_oak/materials/textures/canopy.png</albedo_map>
+            <roughness>0.8</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+      <collision name="collision"><pose>0 0 1.5 0 0 0</pose><geometry><cylinder><radius>0.2</radius><length>3.0</length></cylinder></geometry></collision>
+    </link>
+  </model>
+</sdf>

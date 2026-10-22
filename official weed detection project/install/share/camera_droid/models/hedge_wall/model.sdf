@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="hedge_wall">
+    <static>true</static>
+    <link name="link">
+      <visual name="hedge">
+        <geometry><mesh><uri>model://hedge_wall/meshes/hedge.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://hedge_wall/materials/textures/hedge.png</albedo_map>
+            <roughness>0.9</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+      <collision name="collision"><pose>0 0 0.5 0 0 0</pose><geometry><box><size>2.0 0.5 1.0</size></box></geometry></collision>
+    </link>
+  </model>
+</sdf>
