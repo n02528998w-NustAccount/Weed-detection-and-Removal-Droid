@@ -1,0 +1,146 @@
+[5.494s] Invoking command in '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops': PYTHONPATH=/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/camera_droid build --build-base /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build install --record /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log --install-scripts $base/lib/camera_droid --single-version-externally-managed install_data
+[7.897s] running egg_info
+[7.976s] writing build/camera_droid/camera_droid.egg-info/PKG-INFO
+[7.991s] writing dependency_links to build/camera_droid/camera_droid.egg-info/dependency_links.txt
+[8.000s] writing entry points to build/camera_droid/camera_droid.egg-info/entry_points.txt
+[8.013s] writing requirements to build/camera_droid/camera_droid.egg-info/requires.txt
+[8.020s] writing top-level names to build/camera_droid/camera_droid.egg-info/top_level.txt
+[8.820s] reading manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+[9.291s] writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+[9.298s] running build
+[9.301s] running build_py
+[9.329s] copying camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid
+[9.461s] running install
+[9.486s] running install_lib
+[9.677s] copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid
+[9.914s] byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/area_patrol.py to area_patrol.cpython-312.pyc
+[10.091s] running install_data
+[10.179s] copying launch/sim.launch.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/launch
+[10.408s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models
+[10.427s] copying models/robot_attachment.urdf.xacro -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models
+[10.478s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack
+[10.530s] copying models/blackjack/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack
+[10.619s] copying models/blackjack/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack
+[10.697s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials
+[10.713s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+[10.758s] copying models/blackjack/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+[10.964s] copying models/blackjack/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+[11.076s] copying models/blackjack/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+[11.172s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+[11.224s] copying models/blackjack/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+[11.317s] copying models/blackjack/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+[11.384s] copying models/blackjack/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+[11.441s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2
+[11.468s] copying models/blackjack_2/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2
+[11.538s] copying models/blackjack_2/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2
+[11.601s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials
+[11.613s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+[11.656s] copying models/blackjack_2/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+[11.754s] copying models/blackjack_2/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+[11.839s] copying models/blackjack_2/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+[11.920s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+[11.956s] copying models/blackjack_2/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+[12.063s] copying models/blackjack_2/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+[12.152s] copying models/blackjack_2/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+[12.235s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3
+[12.285s] copying models/blackjack_3/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3
+[12.371s] copying models/blackjack_3/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3
+[12.475s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials
+[12.489s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+[12.549s] copying models/blackjack_3/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+[12.678s] copying models/blackjack_3/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+[12.781s] copying models/blackjack_3/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+[12.867s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+[12.912s] copying models/blackjack_3/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+[13.108s] copying models/blackjack_3/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+[13.288s] copying models/blackjack_3/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+[13.385s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/drive_wheel
+[13.441s] copying models/drive_wheel/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/drive_wheel
+[13.763s] copying models/drive_wheel/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/drive_wheel
+[13.845s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts
+[13.879s] copying models/groundnuts/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts
+[13.967s] copying models/groundnuts/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts
+[14.054s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials
+[14.065s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures
+[14.134s] copying models/groundnuts/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures
+[14.290s] copying models/groundnuts/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures
+[14.379s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes
+[14.410s] copying models/groundnuts/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes
+[14.515s] copying models/groundnuts/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes
+[14.567s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2
+[14.594s] copying models/groundnuts_2/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2
+[14.649s] copying models/groundnuts_2/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2
+[14.711s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials
+[14.719s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures
+[14.766s] copying models/groundnuts_2/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures
+[14.890s] copying models/groundnuts_2/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures
+[14.977s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes
+[15.012s] copying models/groundnuts_2/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes
+[15.178s] copying models/groundnuts_2/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes
+[15.282s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3
+[15.352s] copying models/groundnuts_3/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3
+[15.471s] copying models/groundnuts_3/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3
+[15.629s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials
+[15.642s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures
+[15.705s] copying models/groundnuts_3/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures
+[15.828s] copying models/groundnuts_3/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures
+[15.937s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes
+[15.986s] copying models/groundnuts_3/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes
+[16.148s] copying models/groundnuts_3/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes
+[16.248s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall
+[16.279s] copying models/hedge_wall/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall
+[16.348s] copying models/hedge_wall/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall
+[16.407s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials
+[16.419s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials/textures
+[16.458s] copying models/hedge_wall/materials/textures/hedge.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials/textures
+[16.556s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/meshes
+[16.587s] copying models/hedge_wall/meshes/hedge.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/meshes
+[16.659s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground
+[16.690s] copying models/soil_ground/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground
+[16.747s] copying models/soil_ground/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground
+[16.811s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials
+[16.823s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+[16.858s] copying models/soil_ground/materials/textures/soil_albedo.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+[17.129s] copying models/soil_ground/materials/textures/soil_normal.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+[17.420s] copying models/soil_ground/materials/textures/soil_roughness.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+[17.489s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/meshes
+[17.529s] copying models/soil_ground/meshes/soil.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/meshes
+[17.581s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia
+[17.617s] copying models/tree_acacia/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia
+[17.679s] copying models/tree_acacia/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia
+[17.750s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials
+[17.765s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures
+[17.808s] copying models/tree_acacia/materials/textures/bark.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures
+[18.007s] copying models/tree_acacia/materials/textures/canopy.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures
+[18.148s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes
+[18.183s] copying models/tree_acacia/meshes/canopy.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes
+[18.258s] copying models/tree_acacia/meshes/trunk.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes
+[18.320s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak
+[18.354s] copying models/tree_oak/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak
+[18.416s] copying models/tree_oak/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak
+[18.478s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials
+[18.489s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures
+[18.525s] copying models/tree_oak/materials/textures/bark.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures
+[18.709s] copying models/tree_oak/materials/textures/canopy.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures
+[18.836s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes
+[18.870s] copying models/tree_oak/meshes/canopy.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes
+[18.951s] copying models/tree_oak/meshes/trunk.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes
+[19.017s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/weed_cutter
+[19.047s] copying models/weed_cutter/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/weed_cutter
+[19.105s] copying models/weed_cutter/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/weed_cutter
+[19.164s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence
+[19.193s] copying models/wooden_fence/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence
+[19.250s] copying models/wooden_fence/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence
+[19.314s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials
+[19.327s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials/textures
+[19.380s] copying models/wooden_fence/materials/textures/wood.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials/textures
+[19.542s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/meshes
+[19.600s] copying models/wooden_fence/meshes/fence.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/meshes
+[19.683s] running install_egg_info
+[19.833s] removing '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info' (and everything under it)
+[20.062s] Copying build/camera_droid/camera_droid.egg-info to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info
+[20.813s] running install_scripts
+[21.608s] Installing area_patrol script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid
+[21.628s] Installing weed_detector script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid
+[21.662s] writing list of installed files to '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log'
+[21.748s] Invoked command in '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops' returned '0': PYTHONPATH=/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/camera_droid build --build-base /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build install --record /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log --install-scripts $base/lib/camera_droid --single-version-externally-managed install_data

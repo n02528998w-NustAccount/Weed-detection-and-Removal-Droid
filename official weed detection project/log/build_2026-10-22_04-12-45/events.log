@@ -1,0 +1,381 @@
+[0.000000] (-) TimerEvent: {}
+[0.001282] (camera_droid) JobQueued: {'identifier': 'camera_droid', 'dependencies': OrderedDict()}
+[0.002315] (camera_droid) JobStarted: {'identifier': 'camera_droid'}
+[0.096655] (-) TimerEvent: {}
+[0.197950] (-) TimerEvent: {}
+[0.299322] (-) TimerEvent: {}
+[0.401124] (-) TimerEvent: {}
+[0.502642] (-) TimerEvent: {}
+[0.604122] (-) TimerEvent: {}
+[0.705493] (-) TimerEvent: {}
+[0.806810] (-) TimerEvent: {}
+[0.908308] (-) TimerEvent: {}
+[1.010616] (-) TimerEvent: {}
+[1.112792] (-) TimerEvent: {}
+[1.217494] (-) TimerEvent: {}
+[1.319439] (-) TimerEvent: {}
+[1.420881] (-) TimerEvent: {}
+[1.522433] (-) TimerEvent: {}
+[1.624101] (-) TimerEvent: {}
+[1.725994] (-) TimerEvent: {}
+[1.827823] (-) TimerEvent: {}
+[1.930882] (-) TimerEvent: {}
+[2.032443] (-) TimerEvent: {}
+[2.133888] (-) TimerEvent: {}
+[2.236047] (-) TimerEvent: {}
+[2.337991] (-) TimerEvent: {}
+[2.440388] (-) TimerEvent: {}
+[2.542991] (-) TimerEvent: {}
+[2.644353] (-) TimerEvent: {}
+[2.745408] (-) TimerEvent: {}
+[2.846883] (-) TimerEvent: {}
+[2.948635] (-) TimerEvent: {}
+[3.051409] (-) TimerEvent: {}
+[3.152778] (-) TimerEvent: {}
+[3.256665] (-) TimerEvent: {}
+[3.358891] (-) TimerEvent: {}
+[3.461970] (-) TimerEvent: {}
+[3.564528] (-) TimerEvent: {}
+[3.666734] (-) TimerEvent: {}
+[3.768489] (-) TimerEvent: {}
+[3.870054] (-) TimerEvent: {}
+[3.971267] (-) TimerEvent: {}
+[4.074270] (-) TimerEvent: {}
+[4.175868] (-) TimerEvent: {}
+[4.278502] (-) TimerEvent: {}
+[4.380014] (-) TimerEvent: {}
+[4.482292] (-) TimerEvent: {}
+[4.583929] (-) TimerEvent: {}
+[4.685825] (-) TimerEvent: {}
+[4.788181] (-) TimerEvent: {}
+[4.889709] (-) TimerEvent: {}
+[4.991404] (-) TimerEvent: {}
+[5.092579] (-) TimerEvent: {}
+[5.193929] (-) TimerEvent: {}
+[5.295207] (-) TimerEvent: {}
+[5.396369] (-) TimerEvent: {}
+[5.471094] (camera_droid) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/camera_droid', 'build', '--build-base', '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build', 'install', '--record', '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log', '--install-scripts', '$base/lib/camera_droid', '--single-version-externally-managed', 'install_data'], 'cwd': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'MESA_D3D12_DEFAULT_ADAPTER_NAME': 'NVIDIA', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'promise', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{ca6960d3-edbe-5342-9418-8b449f7848ae}', 'HOME': '/home/promise', 'OLDPWD': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/promise/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'promise', 'NAME': 'DESKTOP-P31CKBR', 'WSL_INTEROP': '/run/WSL/1592_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/promise/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-25.0.3.9-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Cloudflare/Cloudflare WARP/:/mnt/c/Users/Promise/.dnx/bin:/mnt/c/Program Files/Microsoft DNX/Dnvm/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/PyManager/:/mnt/c/Program Files/WSL/:/mnt/c/Users/Promise/.config/herd-lite/bin:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python313/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python314/Scripts/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python314/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Promise/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Promise/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Promise/.dotnet/tools:/mnt/c/Users/Promise/AppData/Local/Programs/Ollama:/mnt/c/Users/Promise/AppData/Roaming/npm:/mnt/c/Users/Promise/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Promise/AppData/Local/Programs/Antigravity IDE/bin:/mnt/c/Users/Promise/.dotnet/tools:/mnt/c/Users/Promise/AppData/Local/pixi/bin/:/mnt/c/Users/Promise/.pixi/bin:/snap/bin', 'WT_SESSION': 'a8df032e-f5b3-443f-90e0-9ba77d5fcf9d', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'PERF_EXEC_PATH': '/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/libexec/perf-core', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/promise/ros2_ws/install/my_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GALLIUM_DRIVER': 'd3d12', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages:/home/promise/ros2_ws/build/my_robot:/home/promise/ros2_ws/install/my_robot/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/opt/gz_transport_vendor/lib/python:/opt/ros/jazzy/opt/gz_msgs_vendor/lib/python:/opt/ros/jazzy/opt/gz_math_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'WT_SESSION:WT_PROFILE_ID:'}), 'shell': False}
+[5.500747] (-) TimerEvent: {}
+[5.601744] (-) TimerEvent: {}
+[5.703050] (-) TimerEvent: {}
+[5.804367] (-) TimerEvent: {}
+[5.906005] (-) TimerEvent: {}
+[6.007185] (-) TimerEvent: {}
+[6.108571] (-) TimerEvent: {}
+[6.211685] (-) TimerEvent: {}
+[6.313647] (-) TimerEvent: {}
+[6.414983] (-) TimerEvent: {}
+[6.516740] (-) TimerEvent: {}
+[6.618317] (-) TimerEvent: {}
+[6.720318] (-) TimerEvent: {}
+[6.821727] (-) TimerEvent: {}
+[6.925331] (-) TimerEvent: {}
+[7.029274] (-) TimerEvent: {}
+[7.131306] (-) TimerEvent: {}
+[7.233434] (-) TimerEvent: {}
+[7.336046] (-) TimerEvent: {}
+[7.438473] (-) TimerEvent: {}
+[7.540295] (-) TimerEvent: {}
+[7.642073] (-) TimerEvent: {}
+[7.744739] (-) TimerEvent: {}
+[7.846304] (-) TimerEvent: {}
+[7.897081] (camera_droid) StdoutLine: {'line': b'running egg_info\n'}
+[7.946759] (-) TimerEvent: {}
+[7.975695] (camera_droid) StdoutLine: {'line': b'writing build/camera_droid/camera_droid.egg-info/PKG-INFO\n'}
+[7.990525] (camera_droid) StdoutLine: {'line': b'writing dependency_links to build/camera_droid/camera_droid.egg-info/dependency_links.txt\n'}
+[8.001116] (camera_droid) StdoutLine: {'line': b'writing entry points to build/camera_droid/camera_droid.egg-info/entry_points.txt\n'}
+[8.010897] (camera_droid) StdoutLine: {'line': b'writing requirements to build/camera_droid/camera_droid.egg-info/requires.txt\n'}
+[8.020673] (camera_droid) StdoutLine: {'line': b'writing top-level names to build/camera_droid/camera_droid.egg-info/top_level.txt\n'}
+[8.047090] (-) TimerEvent: {}
+[8.149975] (-) TimerEvent: {}
+[8.251292] (-) TimerEvent: {}
+[8.352663] (-) TimerEvent: {}
+[8.454123] (-) TimerEvent: {}
+[8.555605] (-) TimerEvent: {}
+[8.657170] (-) TimerEvent: {}
+[8.758862] (-) TimerEvent: {}
+[8.818994] (camera_droid) StdoutLine: {'line': b"reading manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'\n"}
+[8.859064] (-) TimerEvent: {}
+[8.960560] (-) TimerEvent: {}
+[9.062343] (-) TimerEvent: {}
+[9.164305] (-) TimerEvent: {}
+[9.265865] (-) TimerEvent: {}
+[9.290116] (camera_droid) StdoutLine: {'line': b"writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'\n"}
+[9.298613] (camera_droid) StdoutLine: {'line': b'running build\n'}
+[9.302352] (camera_droid) StdoutLine: {'line': b'running build_py\n'}
+[9.328140] (camera_droid) StdoutLine: {'line': b'copying camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid\n'}
+[9.365947] (-) TimerEvent: {}
+[9.461518] (camera_droid) StdoutLine: {'line': b'running install\n'}
+[9.466406] (-) TimerEvent: {}
+[9.485650] (camera_droid) StdoutLine: {'line': b'running install_lib\n'}
+[9.566649] (-) TimerEvent: {}
+[9.668870] (-) TimerEvent: {}
+[9.673141] (camera_droid) StdoutLine: {'line': b'copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid\n'}
+[9.769099] (-) TimerEvent: {}
+[9.870701] (-) TimerEvent: {}
+[9.914051] (camera_droid) StdoutLine: {'line': b'byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/area_patrol.py to area_patrol.cpython-312.pyc\n'}
+[9.971219] (-) TimerEvent: {}
+[10.072703] (-) TimerEvent: {}
+[10.091411] (camera_droid) StdoutLine: {'line': b'running install_data\n'}
+[10.172953] (-) TimerEvent: {}
+[10.177980] (camera_droid) StdoutLine: {'line': b'copying launch/sim.launch.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/launch\n'}
+[10.273311] (-) TimerEvent: {}
+[10.377014] (-) TimerEvent: {}
+[10.408547] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models\n'}
+[10.426566] (camera_droid) StdoutLine: {'line': b'copying models/robot_attachment.urdf.xacro -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models\n'}
+[10.475676] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack\n'}
+[10.483255] (-) TimerEvent: {}
+[10.527821] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack\n'}
+[10.583537] (-) TimerEvent: {}
+[10.619191] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack\n'}
+[10.683959] (-) TimerEvent: {}
+[10.695476] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials\n'}
+[10.709272] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures\n'}
+[10.756838] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures\n'}
+[10.784193] (-) TimerEvent: {}
+[10.888601] (-) TimerEvent: {}
+[10.961913] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures\n'}
+[10.988958] (-) TimerEvent: {}
+[11.075570] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures\n'}
+[11.089246] (-) TimerEvent: {}
+[11.170556] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes\n'}
+[11.191131] (-) TimerEvent: {}
+[11.222729] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes\n'}
+[11.291313] (-) TimerEvent: {}
+[11.317533] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes\n'}
+[11.383808] (camera_droid) StdoutLine: {'line': b'copying models/blackjack/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes\n'}
+[11.391584] (-) TimerEvent: {}
+[11.441177] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2\n'}
+[11.468693] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2\n'}
+[11.491774] (-) TimerEvent: {}
+[11.535528] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2\n'}
+[11.591983] (-) TimerEvent: {}
+[11.601078] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials\n'}
+[11.610615] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures\n'}
+[11.654021] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures\n'}
+[11.692190] (-) TimerEvent: {}
+[11.753103] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures\n'}
+[11.792543] (-) TimerEvent: {}
+[11.838439] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures\n'}
+[11.892757] (-) TimerEvent: {}
+[11.918871] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes\n'}
+[11.955264] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes\n'}
+[11.992982] (-) TimerEvent: {}
+[12.062781] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes\n'}
+[12.093499] (-) TimerEvent: {}
+[12.152004] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_2/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes\n'}
+[12.193783] (-) TimerEvent: {}
+[12.230125] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3\n'}
+[12.283047] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3\n'}
+[12.294040] (-) TimerEvent: {}
+[12.369372] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3\n'}
+[12.394187] (-) TimerEvent: {}
+[12.460735] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials\n'}
+[12.481896] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures\n'}
+[12.495943] (-) TimerEvent: {}
+[12.542521] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures\n'}
+[12.596189] (-) TimerEvent: {}
+[12.678241] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures\n'}
+[12.696478] (-) TimerEvent: {}
+[12.781350] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures\n'}
+[12.796687] (-) TimerEvent: {}
+[12.866593] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes\n'}
+[12.896972] (-) TimerEvent: {}
+[12.907402] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes\n'}
+[12.997704] (-) TimerEvent: {}
+[13.094498] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes\n'}
+[13.118826] (-) TimerEvent: {}
+[13.223255] (-) TimerEvent: {}
+[13.285167] (camera_droid) StdoutLine: {'line': b'copying models/blackjack_3/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes\n'}
+[13.323563] (-) TimerEvent: {}
+[13.381881] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/drive_wheel\n'}
+[13.423972] (-) TimerEvent: {}
+[13.433339] (camera_droid) StdoutLine: {'line': b'copying models/drive_wheel/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/drive_wheel\n'}
+[13.524198] (-) TimerEvent: {}
+[13.636521] (-) TimerEvent: {}
+[13.736334] (camera_droid) StdoutLine: {'line': b'copying models/drive_wheel/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/drive_wheel\n'}
+[13.767756] (-) TimerEvent: {}
+[13.840098] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts\n'}
+[13.868039] (-) TimerEvent: {}
+[13.878380] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts\n'}
+[13.963303] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts\n'}
+[13.971257] (-) TimerEvent: {}
+[14.051578] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials\n'}
+[14.063294] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures\n'}
+[14.071429] (-) TimerEvent: {}
+[14.126736] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures\n'}
+[14.171711] (-) TimerEvent: {}
+[14.274018] (-) TimerEvent: {}
+[14.288841] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures\n'}
+[14.374414] (-) TimerEvent: {}
+[14.377384] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes\n'}
+[14.410469] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes\n'}
+[14.474546] (-) TimerEvent: {}
+[14.514232] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes\n'}
+[14.564816] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2\n'}
+[14.574820] (-) TimerEvent: {}
+[14.594155] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_2/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2\n'}
+[14.649153] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_2/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2\n'}
+[14.674971] (-) TimerEvent: {}
+[14.710234] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials\n'}
+[14.718819] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures\n'}
+[14.763365] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_2/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures\n'}
+[14.775174] (-) TimerEvent: {}
+[14.876699] (-) TimerEvent: {}
+[14.879345] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_2/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures\n'}
+[14.974757] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes\n'}
+[14.981376] (-) TimerEvent: {}
+[15.010655] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_2/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes\n'}
+[15.082180] (-) TimerEvent: {}
+[15.177426] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_2/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes\n'}
+[15.182527] (-) TimerEvent: {}
+[15.276577] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3\n'}
+[15.287163] (-) TimerEvent: {}
+[15.348065] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_3/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3\n'}
+[15.387485] (-) TimerEvent: {}
+[15.466685] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_3/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3\n'}
+[15.487776] (-) TimerEvent: {}
+[15.590818] (-) TimerEvent: {}
+[15.625504] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials\n'}
+[15.641240] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures\n'}
+[15.691030] (-) TimerEvent: {}
+[15.699928] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_3/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures\n'}
+[15.791231] (-) TimerEvent: {}
+[15.826588] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_3/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures\n'}
+[15.891928] (-) TimerEvent: {}
+[15.937200] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes\n'}
+[15.981067] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_3/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes\n'}
+[15.992428] (-) TimerEvent: {}
+[16.096710] (-) TimerEvent: {}
+[16.147069] (camera_droid) StdoutLine: {'line': b'copying models/groundnuts_3/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes\n'}
+[16.196963] (-) TimerEvent: {}
+[16.242602] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall\n'}
+[16.278036] (camera_droid) StdoutLine: {'line': b'copying models/hedge_wall/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall\n'}
+[16.297366] (-) TimerEvent: {}
+[16.347035] (camera_droid) StdoutLine: {'line': b'copying models/hedge_wall/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall\n'}
+[16.397637] (-) TimerEvent: {}
+[16.407075] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials\n'}
+[16.416247] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials/textures\n'}
+[16.457789] (camera_droid) StdoutLine: {'line': b'copying models/hedge_wall/materials/textures/hedge.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials/textures\n'}
+[16.497987] (-) TimerEvent: {}
+[16.555300] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/meshes\n'}
+[16.587456] (camera_droid) StdoutLine: {'line': b'copying models/hedge_wall/meshes/hedge.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/meshes\n'}
+[16.598156] (-) TimerEvent: {}
+[16.658741] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground\n'}
+[16.687757] (camera_droid) StdoutLine: {'line': b'copying models/soil_ground/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground\n'}
+[16.698658] (-) TimerEvent: {}
+[16.746445] (camera_droid) StdoutLine: {'line': b'copying models/soil_ground/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground\n'}
+[16.799163] (-) TimerEvent: {}
+[16.810081] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials\n'}
+[16.820291] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures\n'}
+[16.856994] (camera_droid) StdoutLine: {'line': b'copying models/soil_ground/materials/textures/soil_albedo.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures\n'}
+[16.899219] (-) TimerEvent: {}
+[17.001589] (-) TimerEvent: {}
+[17.103935] (-) TimerEvent: {}
+[17.128864] (camera_droid) StdoutLine: {'line': b'copying models/soil_ground/materials/textures/soil_normal.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures\n'}
+[17.204221] (-) TimerEvent: {}
+[17.306414] (-) TimerEvent: {}
+[17.407899] (-) TimerEvent: {}
+[17.418974] (camera_droid) StdoutLine: {'line': b'copying models/soil_ground/materials/textures/soil_roughness.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures\n'}
+[17.487591] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/meshes\n'}
+[17.508071] (-) TimerEvent: {}
+[17.524065] (camera_droid) StdoutLine: {'line': b'copying models/soil_ground/meshes/soil.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/meshes\n'}
+[17.580462] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia\n'}
+[17.608310] (-) TimerEvent: {}
+[17.617052] (camera_droid) StdoutLine: {'line': b'copying models/tree_acacia/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia\n'}
+[17.678995] (camera_droid) StdoutLine: {'line': b'copying models/tree_acacia/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia\n'}
+[17.708600] (-) TimerEvent: {}
+[17.750034] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials\n'}
+[17.759334] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures\n'}
+[17.807944] (camera_droid) StdoutLine: {'line': b'copying models/tree_acacia/materials/textures/bark.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures\n'}
+[17.813034] (-) TimerEvent: {}
+[17.915028] (-) TimerEvent: {}
+[18.004657] (camera_droid) StdoutLine: {'line': b'copying models/tree_acacia/materials/textures/canopy.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures\n'}
+[18.015402] (-) TimerEvent: {}
+[18.118256] (-) TimerEvent: {}
+[18.143245] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes\n'}
+[18.182699] (camera_droid) StdoutLine: {'line': b'copying models/tree_acacia/meshes/canopy.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes\n'}
+[18.218305] (-) TimerEvent: {}
+[18.258978] (camera_droid) StdoutLine: {'line': b'copying models/tree_acacia/meshes/trunk.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes\n'}
+[18.318462] (-) TimerEvent: {}
+[18.320639] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak\n'}
+[18.351881] (camera_droid) StdoutLine: {'line': b'copying models/tree_oak/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak\n'}
+[18.415372] (camera_droid) StdoutLine: {'line': b'copying models/tree_oak/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak\n'}
+[18.421313] (-) TimerEvent: {}
+[18.477582] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials\n'}
+[18.486985] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures\n'}
+[18.521618] (-) TimerEvent: {}
+[18.525702] (camera_droid) StdoutLine: {'line': b'copying models/tree_oak/materials/textures/bark.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures\n'}
+[18.622048] (-) TimerEvent: {}
+[18.705762] (camera_droid) StdoutLine: {'line': b'copying models/tree_oak/materials/textures/canopy.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures\n'}
+[18.722264] (-) TimerEvent: {}
+[18.824687] (-) TimerEvent: {}
+[18.833797] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes\n'}
+[18.870214] (camera_droid) StdoutLine: {'line': b'copying models/tree_oak/meshes/canopy.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes\n'}
+[18.924916] (-) TimerEvent: {}
+[18.951113] (camera_droid) StdoutLine: {'line': b'copying models/tree_oak/meshes/trunk.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes\n'}
+[19.017004] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/weed_cutter\n'}
+[19.025271] (-) TimerEvent: {}
+[19.046125] (camera_droid) StdoutLine: {'line': b'copying models/weed_cutter/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/weed_cutter\n'}
+[19.104752] (camera_droid) StdoutLine: {'line': b'copying models/weed_cutter/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/weed_cutter\n'}
+[19.125470] (-) TimerEvent: {}
+[19.163997] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence\n'}
+[19.191115] (camera_droid) StdoutLine: {'line': b'copying models/wooden_fence/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence\n'}
+[19.225703] (-) TimerEvent: {}
+[19.249692] (camera_droid) StdoutLine: {'line': b'copying models/wooden_fence/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence\n'}
+[19.310034] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials\n'}
+[19.325798] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials/textures\n'}
+[19.331795] (-) TimerEvent: {}
+[19.378435] (camera_droid) StdoutLine: {'line': b'copying models/wooden_fence/materials/textures/wood.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials/textures\n'}
+[19.432088] (-) TimerEvent: {}
+[19.538151] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/meshes\n'}
+[19.548688] (-) TimerEvent: {}
+[19.596313] (camera_droid) StdoutLine: {'line': b'copying models/wooden_fence/meshes/fence.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/meshes\n'}
+[19.649476] (-) TimerEvent: {}
+[19.679707] (camera_droid) StdoutLine: {'line': b'running install_egg_info\n'}
+[19.749366] (-) TimerEvent: {}
+[19.831780] (camera_droid) StdoutLine: {'line': b"removing '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info' (and everything under it)\n"}
+[19.854586] (-) TimerEvent: {}
+[19.961170] (-) TimerEvent: {}
+[20.057898] (camera_droid) StdoutLine: {'line': b'Copying build/camera_droid/camera_droid.egg-info to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info\n'}
+[20.067471] (-) TimerEvent: {}
+[20.170643] (-) TimerEvent: {}
+[20.275074] (-) TimerEvent: {}
+[20.380471] (-) TimerEvent: {}
+[20.483076] (-) TimerEvent: {}
+[20.589565] (-) TimerEvent: {}
+[20.690885] (-) TimerEvent: {}
+[20.792524] (-) TimerEvent: {}
+[20.814135] (camera_droid) StdoutLine: {'line': b'running install_scripts\n'}
+[20.892749] (-) TimerEvent: {}
+[20.996969] (-) TimerEvent: {}
+[21.099682] (-) TimerEvent: {}
+[21.202336] (-) TimerEvent: {}
+[21.304024] (-) TimerEvent: {}
+[21.405471] (-) TimerEvent: {}
+[21.507155] (-) TimerEvent: {}
+[21.608242] (camera_droid) StdoutLine: {'line': b'Installing area_patrol script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid\n'}
+[21.612503] (-) TimerEvent: {}
+[21.629742] (camera_droid) StdoutLine: {'line': b'Installing weed_detector script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid\n'}
+[21.661020] (camera_droid) StdoutLine: {'line': b"writing list of installed files to '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log'\n"}
+[21.712753] (-) TimerEvent: {}
+[21.747837] (camera_droid) CommandEnded: {'returncode': 0}
+[21.813117] (-) TimerEvent: {}
+[21.915000] (-) TimerEvent: {}
+[22.018421] (-) TimerEvent: {}
+[22.121224] (-) TimerEvent: {}
+[22.222982] (-) TimerEvent: {}
+[22.326600] (-) TimerEvent: {}
+[22.432414] (-) TimerEvent: {}
+[22.535693] (-) TimerEvent: {}
+[22.637951] (-) TimerEvent: {}
+[22.739485] (-) TimerEvent: {}
+[22.840807] (-) TimerEvent: {}
+[22.942293] (-) TimerEvent: {}
+[23.044033] (-) TimerEvent: {}
+[23.146126] (-) TimerEvent: {}
+[23.248522] (-) TimerEvent: {}
+[23.351163] (-) TimerEvent: {}
+[23.455349] (-) TimerEvent: {}
+[23.520521] (camera_droid) JobEnded: {'identifier': 'camera_droid', 'rc': 0}
+[23.540321] (-) EventReactorShutdown: {}

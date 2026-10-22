@@ -1,0 +1,54 @@
+[3.433s] Invoking command in '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops': PYTHONPATH=/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/camera_droid build --build-base /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build install --record /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log --install-scripts $base/lib/camera_droid --single-version-externally-managed install_data
+[4.650s] running egg_info
+[4.655s] creating build/camera_droid/camera_droid.egg-info
+[4.700s] writing build/camera_droid/camera_droid.egg-info/PKG-INFO
+[4.714s] writing dependency_links to build/camera_droid/camera_droid.egg-info/dependency_links.txt
+[4.720s] writing entry points to build/camera_droid/camera_droid.egg-info/entry_points.txt
+[4.729s] writing requirements to build/camera_droid/camera_droid.egg-info/requires.txt
+[4.733s] writing top-level names to build/camera_droid/camera_droid.egg-info/top_level.txt
+[4.742s] writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+[4.874s] reading manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+[4.947s] writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+[4.951s] running build
+[4.953s] running build_py
+[4.960s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build
+[4.964s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib
+[4.966s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid
+[4.978s] copying camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid
+[5.010s] copying camera_droid/plant_classifier.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid
+[5.039s] copying camera_droid/weed_detector.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid
+[5.073s] copying camera_droid/__init__.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid
+[5.095s] running install
+[5.113s] running install_lib
+[5.199s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid
+[5.224s] copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid
+[5.274s] copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/plant_classifier.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid
+[5.329s] copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/weed_detector.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid
+[5.389s] copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/__init__.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid
+[5.447s] byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/area_patrol.py to area_patrol.cpython-312.pyc
+[5.520s] byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/plant_classifier.py to plant_classifier.cpython-312.pyc
+[5.582s] byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/weed_detector.py to weed_detector.cpython-312.pyc
+[5.644s] byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/__init__.py to __init__.cpython-312.pyc
+[5.688s] running install_data
+[5.698s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index
+[5.701s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index/resource_index
+[5.706s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index/resource_index/packages
+[5.722s] copying resource/camera_droid -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index/resource_index/packages
+[5.755s] copying package.xml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid
+[5.779s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/launch
+[5.791s] copying launch/sim.launch.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/launch
+[5.816s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/urdf
+[5.829s] copying urdf/camera_droid.urdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/urdf
+[5.855s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/worlds
+[5.867s] copying worlds/arena.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/worlds
+[5.898s] creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config
+[5.910s] copying config/bridge.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config
+[5.945s] copying config/crops.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config
+[5.980s] copying config/weeds.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config
+[6.005s] running install_egg_info
+[6.086s] Copying build/camera_droid/camera_droid.egg-info to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info
+[6.446s] running install_scripts
+[6.936s] Installing area_patrol script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid
+[6.954s] Installing weed_detector script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid
+[6.977s] writing list of installed files to '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log'
+[7.056s] Invoked command in '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops' returned '0': PYTHONPATH=/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/camera_droid build --build-base /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build install --record /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log --install-scripts $base/lib/camera_droid --single-version-externally-managed install_data

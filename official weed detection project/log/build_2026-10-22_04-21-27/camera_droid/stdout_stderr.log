@@ -1,0 +1,91 @@
+running egg_info
+writing build/camera_droid/camera_droid.egg-info/PKG-INFO
+writing dependency_links to build/camera_droid/camera_droid.egg-info/dependency_links.txt
+writing entry points to build/camera_droid/camera_droid.egg-info/entry_points.txt
+writing requirements to build/camera_droid/camera_droid.egg-info/requires.txt
+writing top-level names to build/camera_droid/camera_droid.egg-info/top_level.txt
+reading manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying worlds/arena.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/worlds
+copying config/crops.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config
+copying config/weeds.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config
+copying models/blackjack/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack
+copying models/blackjack/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack
+copying models/blackjack/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+copying models/blackjack/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+copying models/blackjack/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/materials/textures
+copying models/blackjack/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+copying models/blackjack/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+copying models/blackjack/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack/meshes
+copying models/blackjack_2/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2
+copying models/blackjack_2/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2
+copying models/blackjack_2/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+copying models/blackjack_2/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+copying models/blackjack_2/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/materials/textures
+copying models/blackjack_2/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+copying models/blackjack_2/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+copying models/blackjack_2/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_2/meshes
+copying models/blackjack_3/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3
+copying models/blackjack_3/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3
+copying models/blackjack_3/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+copying models/blackjack_3/materials/textures/seed.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+copying models/blackjack_3/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/materials/textures
+copying models/blackjack_3/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+copying models/blackjack_3/meshes/seeds.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+copying models/blackjack_3/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/blackjack_3/meshes
+copying models/groundnuts/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts
+copying models/groundnuts/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts
+copying models/groundnuts/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures
+copying models/groundnuts/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/materials/textures
+copying models/groundnuts/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes
+copying models/groundnuts/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts/meshes
+copying models/groundnuts_2/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2
+copying models/groundnuts_2/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2
+copying models/groundnuts_2/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures
+copying models/groundnuts_2/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/materials/textures
+copying models/groundnuts_2/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes
+copying models/groundnuts_2/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_2/meshes
+copying models/groundnuts_3/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3
+copying models/groundnuts_3/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3
+copying models/groundnuts_3/materials/textures/leaf.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures
+copying models/groundnuts_3/materials/textures/stem.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/materials/textures
+copying models/groundnuts_3/meshes/leaves.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes
+copying models/groundnuts_3/meshes/stems.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/groundnuts_3/meshes
+copying models/hedge_wall/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall
+copying models/hedge_wall/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall
+copying models/hedge_wall/materials/textures/hedge.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/materials/textures
+copying models/hedge_wall/meshes/hedge.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/hedge_wall/meshes
+copying models/soil_ground/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground
+copying models/soil_ground/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground
+copying models/soil_ground/materials/textures/soil_albedo.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+copying models/soil_ground/materials/textures/soil_normal.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+copying models/soil_ground/materials/textures/soil_roughness.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/materials/textures
+copying models/soil_ground/meshes/soil.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/soil_ground/meshes
+copying models/tree_acacia/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia
+copying models/tree_acacia/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia
+copying models/tree_acacia/materials/textures/bark.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures
+copying models/tree_acacia/materials/textures/canopy.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/materials/textures
+copying models/tree_acacia/meshes/canopy.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes
+copying models/tree_acacia/meshes/trunk.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_acacia/meshes
+copying models/tree_oak/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak
+copying models/tree_oak/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak
+copying models/tree_oak/materials/textures/bark.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures
+copying models/tree_oak/materials/textures/canopy.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/materials/textures
+copying models/tree_oak/meshes/canopy.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes
+copying models/tree_oak/meshes/trunk.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/tree_oak/meshes
+copying models/wooden_fence/model.config -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence
+copying models/wooden_fence/model.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence
+copying models/wooden_fence/materials/textures/wood.png -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/materials/textures
+copying models/wooden_fence/meshes/fence.obj -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/models/wooden_fence/meshes
+running install_egg_info
+removing '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info' (and everything under it)
+Copying build/camera_droid/camera_droid.egg-info to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info
+running install_scripts
+Installing area_patrol script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid
+Installing weed_detector script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid
+writing list of installed files to '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log'

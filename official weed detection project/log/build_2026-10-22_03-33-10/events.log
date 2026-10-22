@@ -1,0 +1,132 @@
+[0.000000] (-) TimerEvent: {}
+[0.001050] (camera_droid) JobQueued: {'identifier': 'camera_droid', 'dependencies': OrderedDict()}
+[0.002779] (camera_droid) JobStarted: {'identifier': 'camera_droid'}
+[0.098004] (-) TimerEvent: {}
+[0.201208] (-) TimerEvent: {}
+[0.304705] (-) TimerEvent: {}
+[0.407665] (-) TimerEvent: {}
+[0.510395] (-) TimerEvent: {}
+[0.612182] (-) TimerEvent: {}
+[0.715901] (-) TimerEvent: {}
+[0.818902] (-) TimerEvent: {}
+[0.921968] (-) TimerEvent: {}
+[1.025363] (-) TimerEvent: {}
+[1.127341] (-) TimerEvent: {}
+[1.231167] (-) TimerEvent: {}
+[1.334357] (-) TimerEvent: {}
+[1.438434] (-) TimerEvent: {}
+[1.542388] (-) TimerEvent: {}
+[1.644533] (-) TimerEvent: {}
+[1.747995] (-) TimerEvent: {}
+[1.850480] (-) TimerEvent: {}
+[1.954224] (-) TimerEvent: {}
+[2.057698] (-) TimerEvent: {}
+[2.159551] (-) TimerEvent: {}
+[2.262665] (-) TimerEvent: {}
+[2.365786] (-) TimerEvent: {}
+[2.468957] (-) TimerEvent: {}
+[2.571670] (-) TimerEvent: {}
+[2.673860] (-) TimerEvent: {}
+[2.776910] (-) TimerEvent: {}
+[2.879872] (-) TimerEvent: {}
+[2.984105] (-) TimerEvent: {}
+[3.087163] (-) TimerEvent: {}
+[3.190030] (-) TimerEvent: {}
+[3.292655] (-) TimerEvent: {}
+[3.395485] (-) TimerEvent: {}
+[3.421163] (camera_droid) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/camera_droid', 'build', '--build-base', '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build', 'install', '--record', '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log', '--install-scripts', '$base/lib/camera_droid', '--single-version-externally-managed', 'install_data'], 'cwd': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'USER': 'promise', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'WT_PROFILE_ID': '{ca6960d3-edbe-5342-9418-8b449f7848ae}', 'HOME': '/home/promise', 'OLDPWD': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops', 'ROS_PYTHON_VERSION': '3', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'WSL_DISTRO_NAME': 'Ubuntu-24.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/promise/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'promise', 'NAME': 'DESKTOP-P31CKBR', 'WSL_INTEROP': '/run/WSL/361_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/promise/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-25.0.3.9-hotspot/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/Cloudflare/Cloudflare WARP/:/mnt/c/Users/Promise/.dnx/bin:/mnt/c/Program Files/Microsoft DNX/Dnvm/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/PyManager/:/mnt/c/Program Files/WSL/:/mnt/c/Users/Promise/.config/herd-lite/bin:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python313/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python314/Scripts/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Python314/:/mnt/c/Users/Promise/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/Promise/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Promise/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Promise/.dotnet/tools:/mnt/c/Users/Promise/AppData/Local/Programs/Ollama:/mnt/c/Users/Promise/AppData/Roaming/npm:/mnt/c/Users/Promise/AppData/Local/GitHubDesktop/bin:/mnt/c/Users/Promise/AppData/Local/Programs/Antigravity IDE/bin:/mnt/c/Users/Promise/.dotnet/tools:/mnt/c/Users/Promise/AppData/Local/pixi/bin/:/mnt/c/Users/Promise/.pixi/bin:/snap/bin', 'WT_SESSION': '74c3065e-3b12-4f8d-95d2-e388548d4be2', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'PERF_EXEC_PATH': '/usr/lib/linux-tools/6.18.54.1-microsoft-standard-WSL2/libexec/perf-core', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'AMENT_PREFIX_PATH': '/home/promise/ros2_ws/install/my_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages:/home/promise/ros2_ws/build/my_robot:/home/promise/ros2_ws/install/my_robot/lib/python3.12/site-packages:/opt/ros/jazzy/opt/gz_sim_vendor/lib/python:/opt/ros/jazzy/opt/sdformat_vendor/lib/python:/opt/ros/jazzy/opt/gz_transport_vendor/lib/python:/opt/ros/jazzy/opt/gz_msgs_vendor/lib/python:/opt/ros/jazzy/opt/gz_math_vendor/lib/python:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'WT_SESSION:WT_PROFILE_ID:'}), 'shell': False}
+[3.495713] (-) TimerEvent: {}
+[3.597123] (-) TimerEvent: {}
+[3.698359] (-) TimerEvent: {}
+[3.799615] (-) TimerEvent: {}
+[3.901254] (-) TimerEvent: {}
+[4.003378] (-) TimerEvent: {}
+[4.104800] (-) TimerEvent: {}
+[4.206914] (-) TimerEvent: {}
+[4.308668] (-) TimerEvent: {}
+[4.410907] (-) TimerEvent: {}
+[4.512639] (-) TimerEvent: {}
+[4.615020] (-) TimerEvent: {}
+[4.651228] (camera_droid) StdoutLine: {'line': b'running egg_info\n'}
+[4.656566] (camera_droid) StdoutLine: {'line': b'creating build/camera_droid/camera_droid.egg-info\n'}
+[4.701493] (camera_droid) StdoutLine: {'line': b'writing build/camera_droid/camera_droid.egg-info/PKG-INFO\n'}
+[4.714664] (camera_droid) StdoutLine: {'line': b'writing dependency_links to build/camera_droid/camera_droid.egg-info/dependency_links.txt\n'}
+[4.717873] (-) TimerEvent: {}
+[4.721934] (camera_droid) StdoutLine: {'line': b'writing entry points to build/camera_droid/camera_droid.egg-info/entry_points.txt\n'}
+[4.729321] (camera_droid) StdoutLine: {'line': b'writing requirements to build/camera_droid/camera_droid.egg-info/requires.txt\n'}
+[4.734604] (camera_droid) StdoutLine: {'line': b'writing top-level names to build/camera_droid/camera_droid.egg-info/top_level.txt\n'}
+[4.743350] (camera_droid) StdoutLine: {'line': b"writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'\n"}
+[4.818572] (-) TimerEvent: {}
+[4.874721] (camera_droid) StdoutLine: {'line': b"reading manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'\n"}
+[4.919048] (-) TimerEvent: {}
+[4.948231] (camera_droid) StdoutLine: {'line': b"writing manifest file 'build/camera_droid/camera_droid.egg-info/SOURCES.txt'\n"}
+[4.952697] (camera_droid) StdoutLine: {'line': b'running build\n'}
+[4.955103] (camera_droid) StdoutLine: {'line': b'running build_py\n'}
+[4.961480] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build\n'}
+[4.964902] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib\n'}
+[4.967778] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid\n'}
+[4.980126] (camera_droid) StdoutLine: {'line': b'copying camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid\n'}
+[5.011022] (camera_droid) StdoutLine: {'line': b'copying camera_droid/plant_classifier.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid\n'}
+[5.019270] (-) TimerEvent: {}
+[5.039490] (camera_droid) StdoutLine: {'line': b'copying camera_droid/weed_detector.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid\n'}
+[5.074048] (camera_droid) StdoutLine: {'line': b'copying camera_droid/__init__.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid\n'}
+[5.094302] (camera_droid) StdoutLine: {'line': b'running install\n'}
+[5.114259] (camera_droid) StdoutLine: {'line': b'running install_lib\n'}
+[5.119402] (-) TimerEvent: {}
+[5.199809] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid\n'}
+[5.219805] (-) TimerEvent: {}
+[5.225606] (camera_droid) StdoutLine: {'line': b'copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/area_patrol.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid\n'}
+[5.275095] (camera_droid) StdoutLine: {'line': b'copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/plant_classifier.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid\n'}
+[5.320588] (-) TimerEvent: {}
+[5.329368] (camera_droid) StdoutLine: {'line': b'copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/weed_detector.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid\n'}
+[5.389796] (camera_droid) StdoutLine: {'line': b'copying /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/build/lib/camera_droid/__init__.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid\n'}
+[5.421351] (-) TimerEvent: {}
+[5.447235] (camera_droid) StdoutLine: {'line': b'byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/area_patrol.py to area_patrol.cpython-312.pyc\n'}
+[5.521070] (camera_droid) StdoutLine: {'line': b'byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/plant_classifier.py to plant_classifier.cpython-312.pyc\n'}
+[5.524767] (-) TimerEvent: {}
+[5.582272] (camera_droid) StdoutLine: {'line': b'byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/weed_detector.py to weed_detector.cpython-312.pyc\n'}
+[5.625230] (-) TimerEvent: {}
+[5.645097] (camera_droid) StdoutLine: {'line': b'byte-compiling /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid/__init__.py to __init__.cpython-312.pyc\n'}
+[5.689464] (camera_droid) StdoutLine: {'line': b'running install_data\n'}
+[5.699554] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index\n'}
+[5.702573] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index/resource_index\n'}
+[5.706724] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index/resource_index/packages\n'}
+[5.722909] (camera_droid) StdoutLine: {'line': b'copying resource/camera_droid -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/ament_index/resource_index/packages\n'}
+[5.725903] (-) TimerEvent: {}
+[5.756052] (camera_droid) StdoutLine: {'line': b'copying package.xml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid\n'}
+[5.779882] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/launch\n'}
+[5.792414] (camera_droid) StdoutLine: {'line': b'copying launch/sim.launch.py -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/launch\n'}
+[5.817858] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/urdf\n'}
+[5.826086] (-) TimerEvent: {}
+[5.830605] (camera_droid) StdoutLine: {'line': b'copying urdf/camera_droid.urdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/urdf\n'}
+[5.855966] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/worlds\n'}
+[5.867845] (camera_droid) StdoutLine: {'line': b'copying worlds/arena.sdf -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/worlds\n'}
+[5.899436] (camera_droid) StdoutLine: {'line': b'creating /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config\n'}
+[5.911752] (camera_droid) StdoutLine: {'line': b'copying config/bridge.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config\n'}
+[5.926610] (-) TimerEvent: {}
+[5.945957] (camera_droid) StdoutLine: {'line': b'copying config/crops.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config\n'}
+[5.980617] (camera_droid) StdoutLine: {'line': b'copying config/weeds.yaml -> /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/share/camera_droid/config\n'}
+[6.006122] (camera_droid) StdoutLine: {'line': b'running install_egg_info\n'}
+[6.026896] (-) TimerEvent: {}
+[6.085938] (camera_droid) StdoutLine: {'line': b'Copying build/camera_droid/camera_droid.egg-info to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/python3.12/site-packages/camera_droid-0.1.0-py3.12.egg-info\n'}
+[6.127416] (-) TimerEvent: {}
+[6.229782] (-) TimerEvent: {}
+[6.331772] (-) TimerEvent: {}
+[6.434098] (-) TimerEvent: {}
+[6.447113] (camera_droid) StdoutLine: {'line': b'running install_scripts\n'}
+[6.535210] (-) TimerEvent: {}
+[6.637767] (-) TimerEvent: {}
+[6.739979] (-) TimerEvent: {}
+[6.842500] (-) TimerEvent: {}
+[6.937143] (camera_droid) StdoutLine: {'line': b'Installing area_patrol script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid\n'}
+[6.942703] (-) TimerEvent: {}
+[6.953669] (camera_droid) StdoutLine: {'line': b'Installing weed_detector script to /mnt/c/Users/Promise/Downloads/camera-droid-with-crops/install/camera_droid/lib/camera_droid\n'}
+[6.978027] (camera_droid) StdoutLine: {'line': b"writing list of installed files to '/mnt/c/Users/Promise/Downloads/camera-droid-with-crops/build/camera_droid/install.log'\n"}
+[7.043671] (-) TimerEvent: {}
+[7.056923] (camera_droid) CommandEnded: {'returncode': 0}
+[7.144755] (-) TimerEvent: {}
+[7.247362] (-) TimerEvent: {}
+[7.348550] (-) TimerEvent: {}
+[7.450289] (-) TimerEvent: {}
+[7.477645] (camera_droid) JobEnded: {'identifier': 'camera_droid', 'rc': 0}
+[7.489302] (-) EventReactorShutdown: {}
