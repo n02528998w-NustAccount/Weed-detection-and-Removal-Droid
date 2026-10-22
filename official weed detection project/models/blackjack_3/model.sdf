@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="blackjack_3">
+    <static>true</static>
+    <link name="link">
+      <visual name="stems">
+        <geometry><mesh><uri>model://blackjack_3/meshes/stems.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://blackjack_3/materials/textures/stem.png</albedo_map>
+            <roughness>0.9</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+      <visual name="leaves">
+        <geometry><mesh><uri>model://blackjack_3/meshes/leaves.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://blackjack_3/materials/textures/leaf.png</albedo_map>
+            <roughness>0.7</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+      <visual name="seeds">
+        <geometry><mesh><uri>model://blackjack_3/meshes/seeds.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://blackjack_3/materials/textures/seed.png</albedo_map>
+            <roughness>0.9</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
