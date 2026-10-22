@@ -80,4 +80,4 @@ Photos and CSV reports are saved under:
 
 - The detector currently uses colour thresholds and blob size; it is not a trained AI model.
 - Weed removal is simulated in Gazebo, not performed by real hardware.
-- Test the project in your Ubuntu environment before claiming that it works
+- Test the project in your Ubuntu environment before claiming that it works.
