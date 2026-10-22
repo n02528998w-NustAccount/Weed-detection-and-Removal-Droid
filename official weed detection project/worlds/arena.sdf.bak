@@ -1,0 +1,1862 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <world name="arena">
+    <physics name="default_physics" type="ode">
+      <max_step_size>0.003</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <scene>
+      <ambient>0.5 0.5 0.5 1</ambient>
+      <background>0.7 0.8 0.9 1</background>
+    </scene>
+
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.3 0.3 0.3 1</specular>
+      <direction>-0.5 0.2 -0.9</direction>
+    </light>
+
+    <model name="ground">
+      <static>true</static>
+      <link name="link">
+        <collision name="c">
+          <geometry><plane><normal>0 0 1</normal><size>30 30</size></plane></geometry>
+        </collision>
+        <visual name="v">
+          <geometry><plane><normal>0 0 1</normal><size>30 30</size></plane></geometry>
+          <material><ambient>0.75 0.75 0.7 1</ambient><diffuse>0.75 0.75 0.7 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 10 m x 10 m arena walls -->
+    <model name="wall_n">
+      <static>true</static><pose>0 5.1 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>10.4 0.2 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>10.4 0.2 0.8</size></box></geometry>
+          <material><ambient>0.6 0.3 0.3 1</ambient><diffuse>0.6 0.3 0.3 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_s">
+      <static>true</static><pose>0 -5.1 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>10.4 0.2 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>10.4 0.2 0.8</size></box></geometry>
+          <material><ambient>0.2 0.5 0.6 1</ambient><diffuse>0.2 0.5 0.6 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_e">
+      <static>true</static><pose>5.1 0 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.2 10.4 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 10.4 0.8</size></box></geometry>
+          <material><ambient>0.3 0.3 0.7 1</ambient><diffuse>0.3 0.3 0.7 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="wall_w">
+      <static>true</static><pose>-5.1 0 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.2 10.4 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 10.4 0.8</size></box></geometry>
+          <material><ambient>0.7 0.6 0.2 1</ambient><diffuse>0.7 0.6 0.2 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Things to photograph (kept clear of the patrol lanes at y = -3, -1, 1, 3) -->
+    <model name="red_box">
+      <static>true</static><pose>0 2 0.25 0 0 0.4</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.9 0.1 0.1 1</ambient><diffuse>0.9 0.1 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="orange_box">
+      <static>true</static><pose>0 -2 0.25 0 0 -0.3</pose>
+      <link name="link">
+        <collision name="c"><geometry><box><size>0.5 0.5 0.5</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.5 0.5 0.5</size></box></geometry>
+          <material><ambient>0.95 0.5 0.1 1</ambient><diffuse>0.95 0.5 0.1 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="blue_cylinder">
+      <static>true</static><pose>3 0 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><cylinder><radius>0.3</radius><length>0.8</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.8</length></cylinder></geometry>
+          <material><ambient>0.1 0.3 0.8 1</ambient><diffuse>0.1 0.3 0.8 1</diffuse></material></visual>
+      </link>
+    </model>
+    <model name="purple_cylinder">
+      <static>true</static><pose>-3 0 0.4 0 0 0</pose>
+      <link name="link">
+        <collision name="c"><geometry><cylinder><radius>0.3</radius><length>0.8</length></cylinder></geometry></collision>
+        <visual name="v"><geometry><cylinder><radius>0.3</radius><length>0.8</length></cylinder></geometry>
+          <material><ambient>0.6 0.2 0.8 1</ambient><diffuse>0.6 0.2 0.8 1</diffuse></material></visual>
+      </link>
+    </model>
+
+    <!-- Weeds: visual-only green clusters on the ground -->
+    <model name="weed_1">
+      <static>true</static>
+      <pose>-2.5 -3.1 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_2">
+      <static>true</static>
+      <pose>-0.5 -2.9 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_3">
+      <static>true</static>
+      <pose>1.5 -3.05 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_4">
+      <static>true</static>
+      <pose>-3.0 -0.95 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_5">
+      <static>true</static>
+      <pose>0.5 -1.1 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_6">
+      <static>true</static>
+      <pose>2.2 -0.9 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_7">
+      <static>true</static>
+      <pose>-1.5 1.1 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_8">
+      <static>true</static>
+      <pose>1.2 0.9 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_9">
+      <static>true</static>
+      <pose>3.5 1.05 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_10">
+      <static>true</static>
+      <pose>-2.0 2.95 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="weed_11">
+      <static>true</static>
+      <pose>2.8 3.0 0 0 0 0</pose>
+      <link name="link">
+        <visual name="a">
+          <pose>0 0 0.05 0 0 0</pose>
+          <geometry><sphere><radius>0.06</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="b">
+          <pose>0.05 0.03 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.04</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+        <visual name="c">
+          <pose>-0.04 -0.04 0.04 0 0 0</pose>
+          <geometry><sphere><radius>0.045</radius></sphere></geometry>
+          <material><ambient>0.2 0.8 0.1 1</ambient><diffuse>0.2 0.8 0.1 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <!-- Crops: cabbages the robot must LEAVE ALONE (visual-only, like the weeds) -->
+    <model name="crop_1">
+      <static>true</static>
+      <pose>-0.180 -2.760 0 0 0 0.900</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_2">
+      <static>true</static>
+      <pose>0.820 -1.240 0 0 0 1.800</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_3">
+      <static>true</static>
+      <pose>1.520 0.760 0 0 0 2.700</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_4">
+      <static>true</static>
+      <pose>3.120 3.240 0 0 0 3.600</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_5">
+      <static>true</static>
+      <pose>-3.600 -2.760 0 0 0 4.500</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_6">
+      <static>true</static>
+      <pose>-2.700 -2.760 0 0 0 5.400</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_7">
+      <static>true</static>
+      <pose>-1.800 -2.760 0 0 0 0.020</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_8">
+      <static>true</static>
+      <pose>-0.900 -2.760 0 0 0 0.920</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_9">
+      <static>true</static>
+      <pose>0.900 -2.760 0 0 0 1.820</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_10">
+      <static>true</static>
+      <pose>1.800 -2.760 0 0 0 2.720</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_11">
+      <static>true</static>
+      <pose>2.700 -2.760 0 0 0 3.620</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_12">
+      <static>true</static>
+      <pose>3.600 -2.760 0 0 0 4.520</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_13">
+      <static>true</static>
+      <pose>-3.600 -0.760 0 0 0 5.420</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_14">
+      <static>true</static>
+      <pose>-2.700 -0.760 0 0 0 0.040</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_15">
+      <static>true</static>
+      <pose>-1.800 -0.760 0 0 0 0.940</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_16">
+      <static>true</static>
+      <pose>-0.900 -0.760 0 0 0 1.840</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_17">
+      <static>true</static>
+      <pose>0.000 -0.760 0 0 0 2.740</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_18">
+      <static>true</static>
+      <pose>0.900 -0.760 0 0 0 3.640</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_19">
+      <static>true</static>
+      <pose>1.800 -0.760 0 0 0 4.540</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_20">
+      <static>true</static>
+      <pose>2.700 -0.760 0 0 0 5.440</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_21">
+      <static>true</static>
+      <pose>3.600 -0.760 0 0 0 0.060</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_22">
+      <static>true</static>
+      <pose>-3.600 1.240 0 0 0 0.960</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_23">
+      <static>true</static>
+      <pose>-2.700 1.240 0 0 0 1.860</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_24">
+      <static>true</static>
+      <pose>-1.800 1.240 0 0 0 2.760</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_25">
+      <static>true</static>
+      <pose>-0.900 1.240 0 0 0 3.660</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_26">
+      <static>true</static>
+      <pose>0.000 1.240 0 0 0 4.560</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_27">
+      <static>true</static>
+      <pose>0.900 1.240 0 0 0 5.460</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_28">
+      <static>true</static>
+      <pose>1.800 1.240 0 0 0 0.080</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_29">
+      <static>true</static>
+      <pose>2.700 1.240 0 0 0 0.980</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_30">
+      <static>true</static>
+      <pose>-3.600 3.240 0 0 0 1.880</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_31">
+      <static>true</static>
+      <pose>-2.700 3.240 0 0 0 2.780</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_32">
+      <static>true</static>
+      <pose>-1.800 3.240 0 0 0 3.680</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_33">
+      <static>true</static>
+      <pose>-0.900 3.240 0 0 0 4.580</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_34">
+      <static>true</static>
+      <pose>0.000 3.240 0 0 0 5.480</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_35">
+      <static>true</static>
+      <pose>0.900 3.240 0 0 0 0.100</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_36">
+      <static>true</static>
+      <pose>1.800 3.240 0 0 0 1.000</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name="crop_37">
+      <static>true</static>
+      <pose>3.600 3.240 0 0 0 1.900</pose>
+      <link name="link">
+        <visual name="head">
+          <pose>0 0 0.04 0 0 0</pose>
+          <geometry><ellipsoid><radii>0.035 0.035 0.03</radii></ellipsoid></geometry>
+          <material><ambient>0.08 0.55 0.38 1</ambient><diffuse>0.08 0.55 0.38 1</diffuse></material>
+        </visual>
+        <visual name="leaf0">
+          <pose>0.0220 0.0000 0.022 0 -0.3 0.0000</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf1">
+          <pose>0.0110 0.0191 0.022 0 -0.3 1.0472</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf2">
+          <pose>-0.0110 0.0191 0.022 0 -0.3 2.0944</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf3">
+          <pose>-0.0220 0.0000 0.022 0 -0.3 3.1416</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf4">
+          <pose>-0.0110 -0.0191 0.022 0 -0.3 4.1888</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+        <visual name="leaf5">
+          <pose>0.0110 -0.0191 0.022 0 -0.3 5.2360</pose>
+          <geometry><ellipsoid><radii>0.025 0.018 0.008</radii></ellipsoid></geometry>
+          <material><ambient>0.05 0.40 0.28 1</ambient><diffuse>0.05 0.40 0.28 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <!-- End crops -->
+  </world>
+</sdf>
