@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="soil_ground">
+    <static>true</static>
+    <link name="link">
+      <visual name="soil">
+        <geometry><mesh><uri>model://soil_ground/meshes/soil.obj</uri></mesh></geometry>
+        <material>
+          <ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><specular>0.04 0.04 0.04 1</specular>
+          <pbr><metal>
+            <albedo_map>model://soil_ground/materials/textures/soil_albedo.png</albedo_map><normal_map>model://soil_ground/materials/textures/soil_normal.png</normal_map>
+            <roughness>0.95</roughness><metalness>0.0</metalness>
+          </metal></pbr>
+        </material>
+      </visual>
+      <collision name="collision"><geometry><plane><normal>0 0 1</normal><size>60 60</size></plane></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+    </link>
+  </model>
+</sdf>
