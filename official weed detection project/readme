@@ -1,1 +1,55 @@
+SPRINT 1: Planning, Sourcing & Vibe-Coding (Week 1)
+Focus: Project setup, procurement, data collection, and initial software prototyping.
+•	Tivonge Kambarami (Team Lead / Project Manager): Finalise and approve the SRS; coordinate team roles, weekly milestones, and file sharing.
+•	Promise Siafwiyo (Software Engineer) and Panashe Chiriwa (Programmer 2): Write AI prompts and build the first vibe-coded throw-away prototype to test detect-and-decide logic.
+•	Tshepang Dewa (Systems Engineer): Assist with system architecture setup and requirements mapping.
+•	Pardon Takudzwa Shereni (Network Engineer): Research local Wi-Fi/hotspot communication requirements and methods for local detection syncing.
+•	Tafara Mapiku (Test Programmer): Set up testing evaluation criteria and metrics for the prototype.
+•	Carlton Kampota (Programmer 1): Assist with initial code drafting and repository management.
+•	Tawanda Wamambo (Chief Security Officer): Review safety rules, emergency stop protocols, and risk assessments for the cutter mechanism.
+•	Blessing Musarara (Database Administrator): Plan the data schema for plant images and future dashboard logging.
+•	Anthea Nyovhi (AI/ML Engineer): Begin collecting and organising the initial dataset of weed and crop images.
+Milestone: SRS and parts list approved.
+
+
+
+SPRINT 2: AI Model, Software & Hardware Assembly (Week 2)
+Focus: Core intelligence, user interface, and physical assembly.
+•	Anthea Nyovhi (AI/ML Engineer): Train and test the image-classification model, targeting at least 80% accuracy on test images.
+•	Promise Siafwiyo (Software Engineer): Vibe-code and set up the web dashboard to track detections, weeds removed, and battery levels.
+•	Carlton Kampota (Programmer 1) and Panashe Chiriwa (Programmer 2): Write and refine the microcontroller firmware and dashboard integration code.
+•	Tshepang Dewa (Systems Engineer): Supervise physical assembly of the 4WD robot chassis kit.
+•	Tafara Mapiku (Test Programmer): Test the classification model against validation image sets to confirm it meets target metrics.
+•	Blessing Musarara (Database Administrator): Integrate data logging structures for the web dashboard.
+•	Pardon Takudzwa Shereni (Network Engineer): Wire the hardware components, including the ESP32 modules, L298N motor drivers, and sensors.
+•	Tawanda Wamambo (Chief Security Officer): Verify that wiring and electrical components meet safe handling and power limit guidelines.
+•	Tivonge Kambarami (Project Manager): Track component delivery from suppliers and manage backup plans for delayed parts.
+Milestone: Model reaches target accuracy and dashboard goes live.
+
+
+
+SPRINT 3: Integration & Safety Calibration (Week 3)
+Focus: Bringing hardware, AI, and software together with safety controls.
+•	Tshepang Dewa (Systems Engineer) and Pardon Takudzwa Shereni (Network Engineer): Physically connect the camera, controller, cutter mechanism, and dashboard.
+•	Carlton Kampota (Programmer 1) and Panashe Chiriwa (Programmer 2): Calibrate the servo cutter arm position and motor response times.
+•	Tawanda Wamambo (Chief Security Officer): Implement and test safety measures, including emergency stops, physical guards, and proximity stop rules.
+•	Tafara Mapiku (Test Programmer): Run bench integration tests to verify the cutter activates only for verified weeds and safely ignores crops.
+•	Anthea Nyovhi (AI/ML Engineer): Fine-tune classification confidence thresholds to prevent misclassifications.
+•	Blessing Musarara (Database Administrator): Verify data flow from the controller to the monitoring dashboard database.
+•	Promise Siafwiyo (Software Engineer): Debug communication bottlenecks between hardware components and the web interface.
+•	Tivonge Kambarami (Project Manager): Oversee integration progress and manage testing schedules.
+Milestone: End-to-end "detect-and-cut" functionality works seamlessly.
+
+
+
+SPRINT 4: Field Testing, Documentation & Presentation (Week 4)
+Focus: Rigorous evaluation, bug fixing, final documentation, and demo delivery.
+•	Tafara Mapiku (Test Programmer) and Tshepang Dewa (Systems Engineer): Run field tests on potted plants/test beds; record accuracy, speed, and timing metrics.
+•	Pardon Takudzwa Shereni (Network Engineer) and Tawanda Wamambo (Chief Security Officer): Monitor connectivity stability (using phone hotspots) and battery performance, and apply quick fixes for terrain or lighting issues (such as shade hoods or LEDs).
+•	Promise Siafwiyo, Carlton Kampota, and Panashe Chiriwa (Software and Programmers): Fix software defects, runtime errors, and edge cases found during field tests.
+•	Anthea Nyovhi (AI/ML Engineer): Document model performance statistics and accuracy reports.
+•	Blessing Musarara (Database Administrator): Finalise the bill of materials, project logs, and data records.
+•	Tivonge Kambarami (Project Manager): Compile final documentation (test report and SRS revisions), coordinate presentation slides, and lead the live demonstration.
+Milestone: Final presentation, live demonstration, and complete project submission.
+
 
