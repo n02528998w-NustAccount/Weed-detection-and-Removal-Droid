@@ -1,0 +1,3 @@
+[console_scripts]
+area_patrol = camera_droid.area_patrol:main
+weed_detector = camera_droid.weed_detector:main
