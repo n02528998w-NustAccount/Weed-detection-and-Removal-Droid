@@ -1,0 +1,253 @@
+{
+  "patches": {
+    "@/main": {
+      "nodes": {
+        "r1m4hPv6Gl": {
+          "id": "r1m4hPv6Gl",
+          "type": "@/droid-state",
+          "position": {
+            "x": 14,
+            "y": 1,
+            "units": "slots"
+          }
+        },
+        "HkhShvwpGe": {
+          "id": "HkhShvwpGe",
+          "type": "xod/debug/tweak-pulse",
+          "position": {
+            "x": 16,
+            "y": 0,
+            "units": "slots"
+          }
+        },
+        "HkrIhDvTGx": {
+          "id": "HkrIhDvTGx",
+          "type": "xod/debug/tweak-pulse",
+          "position": {
+            "x": 18,
+            "y": 0,
+            "units": "slots"
+          }
+        },
+        "SJxDnDPafl": {
+          "id": "SJxDnDPafl",
+          "type": "xod/debug/tweak-boolean",
+          "position": {
+            "x": 11,
+            "y": 0,
+            "units": "slots"
+          }
+        },
+        "HJNPnDPpfg": {
+          "id": "HJNPnDPpfg",
+          "type": "xod/debug/tweak-boolean",
+          "position": {
+            "x": 13,
+            "y": 0,
+            "units": "slots"
+          }
+        },
+        "HkyFnvwpfl": {
+          "id": "HkyFnvwpfl",
+          "type": "xod/core/clock",
+          "position": {
+            "x": 23,
+            "y": 1,
+            "units": "slots"
+          }
+        },
+        "BkmjCwv6zg": {
+          "id": "BkmjCwv6zg",
+          "type": "@/send-state",
+          "position": {
+            "x": 17,
+            "y": 2,
+            "units": "slots"
+          }
+        }
+      },
+      "links": {
+        "BynZkOPafg": {
+          "id": "BynZkOPafg",
+          "output": {
+            "nodeId": "HkhShvwpGe",
+            "pinKey": "Bkf4BDsmV"
+          },
+          "input": {
+            "nodeId": "r1m4hPv6Gl",
+            "pinKey": "rklQjwwpMg"
+          }
+        },
+        "H1iMkuD6zx": {
+          "id": "H1iMkuD6zx",
+          "output": {
+            "nodeId": "HkrIhDvTGx",
+            "pinKey": "Bkf4BDsmV"
+          },
+          "input": {
+            "nodeId": "r1m4hPv6Gl",
+            "pinKey": "H1xysPwTMx"
+          }
+        },
+        "Skj50ODpfg": {
+          "id": "Skj50ODpfg",
+          "output": {
+            "nodeId": "SJxDnDPafl",
+            "pinKey": "Sk1e_NIVE"
+          },
+          "input": {
+            "nodeId": "r1m4hPv6Gl",
+            "pinKey": "H1vEoPDpGx"
+          }
+        },
+        "BJ_sC_w6fx": {
+          "id": "BJ_sC_w6fx",
+          "output": {
+            "nodeId": "HJNPnDPpfg",
+            "pinKey": "Sk1e_NIVE"
+          },
+          "input": {
+            "nodeId": "r1m4hPv6Gl",
+            "pinKey": "SkESsPwpGe"
+          }
+        },
+        "ryyC0_PpGx": {
+          "id": "ryyC0_PpGx",
+          "output": {
+            "nodeId": "r1m4hPv6Gl",
+            "pinKey": "BkyIsvPpGl"
+          },
+          "input": {
+            "nodeId": "BkmjCwv6zg",
+            "pinKey": "S1DfRwP6fg"
+          }
+        },
+        "HyqIyYDpzl": {
+          "id": "HyqIyYDpzl",
+          "output": {
+            "nodeId": "HkyFnvwpfl",
+            "pinKey": "HJU8CE2lW"
+          },
+          "input": {
+            "nodeId": "BkmjCwv6zg",
+            "pinKey": "Hy3-0vDaGx"
+          }
+        }
+      },
+      "path": "@/main"
+    },
+    "@/droid-state": {
+      "nodes": {
+        "Hkj65wDTGe": {
+          "id": "Hkj65wDTGe",
+          "type": "xod/patch-nodes/not-implemented-in-xod",
+          "position": {
+            "x": 3,
+            "y": 0,
+            "units": "slots"
+          }
+        },
+        "H1xysPwTMx": {
+          "id": "H1xysPwTMx",
+          "type": "xod/patch-nodes/input-pulse",
+          "position": {
+            "x": 8,
+            "y": 0,
+            "units": "slots"
+          },
+          "label": "STOP"
+        },
+        "rklQjwwpMg": {
+          "id": "rklQjwwpMg",
+          "type": "xod/patch-nodes/input-pulse",
+          "position": {
+            "x": 6,
+            "y": 0,
+            "units": "slots"
+          },
+          "label": "START"
+        },
+        "H1vEoPDpGx": {
+          "id": "H1vEoPDpGx",
+          "type": "xod/patch-nodes/input-boolean",
+          "position": {
+            "x": 2,
+            "y": 1,
+            "units": "slots"
+          },
+          "label": "BLOCKED"
+        },
+        "SkESsPwpGe": {
+          "id": "SkESsPwpGe",
+          "type": "xod/patch-nodes/input-boolean",
+          "position": {
+            "x": 2,
+            "y": 2,
+            "units": "slots"
+          },
+          "label": "CUT"
+        },
+        "BkyIsvPpGl": {
+          "id": "BkyIsvPpGl",
+          "type": "xod/patch-nodes/output-number",
+          "position": {
+            "x": 8,
+            "y": 2,
+            "units": "slots"
+          },
+          "label": "STATE"
+        }
+      },
+      "path": "@/droid-state",
+      "attachments": [
+        {
+          "filename": "patch.cpp",
+          "encoding": "utf-8",
+          "content": "node {\n    uint8_t mode = 0; // 0 IDLE, 1 DRIVE, 2 AVOID, 3 CUT\n\n    void evaluate(Context ctx) {\n        bool blocked = getValue<input_BLOCKED>(ctx);\n        bool cut = getValue<input_CUT>(ctx);\n        bool start = isInputDirty<input_START>(ctx);\n        bool stop = isInputDirty<input_STOP>(ctx);\n\n        uint8_t running = cut ? 3 : 1;\n\n        if (stop) {\n            mode = 0;\n        } else if (mode == 0) {\n            if (start && !blocked) mode = running;\n        } else if (mode == 1) {\n            if (blocked) mode = 2;\n            else if (cut) mode = 3;\n        } else if (mode == 2) {\n            if (!blocked) mode = running;\n        } else if (mode == 3) {\n            if (blocked) mode = 2;\n            else if (!cut) mode = 1;\n        }\n\n        emitValue<output_STATE>(ctx, mode);\n    }\n}"
+        }
+      ]
+    },
+    "@/send-state": {
+      "nodes": {
+        "rkQbAvvazl": {
+          "id": "rkQbAvvazl",
+          "type": "xod/patch-nodes/not-implemented-in-xod",
+          "position": {
+            "x": 1,
+            "y": 0,
+            "units": "slots"
+          }
+        },
+        "Hy3-0vDaGx": {
+          "id": "Hy3-0vDaGx",
+          "type": "xod/patch-nodes/input-pulse",
+          "position": {
+            "x": 5,
+            "y": 0,
+            "units": "slots"
+          },
+          "label": "SEND"
+        },
+        "S1DfRwP6fg": {
+          "id": "S1DfRwP6fg",
+          "type": "xod/patch-nodes/input-number",
+          "position": {
+            "x": 1,
+            "y": 1,
+            "units": "slots"
+          },
+          "label": "STATE"
+        }
+      },
+      "path": "@/send-state",
+      "attachments": [
+        {
+          "filename": "patch.cpp",
+          "encoding": "utf-8",
+          "content": "node {\n    bool started = false;\n\n    void evaluate(Context ctx) {\n        if (!started) {\n            Serial.begin(9600);\n            started = true;\n        }\n        if (!isInputDirty<input_SEND>(ctx)) return;\n        Serial.print(\"state:\");\n        Serial.println((int)getValue<input_STATE>(ctx));\n    }\n}"
+        }
+      ]
+    }
+  },
+  "name": "main-controller"
+}
