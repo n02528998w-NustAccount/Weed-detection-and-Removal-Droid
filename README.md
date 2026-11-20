@@ -51,3 +51,5 @@ Focus: Rigorous evaluation, bug fixing, final documentation, and demo delivery.
 •	Blessing Musarara (Database Administrator): Finalise the bill of materials, project logs, and data records.
 •	Tivonge Kambarami (Project Manager): Compile final documentation (test report and SRS revisions), coordinate presentation slides, and lead the live demonstration.
 Milestone: Final presentation, live demonstration, and complete project submission.
+
+Dashboard Simulation: https://codedbytk.github.io/weed-zap-dashboard/
